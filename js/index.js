@@ -120,9 +120,54 @@ console.log(type);
 console.log(true && true);
 console.log(false && true);
 
-//logical OR ()
+//logical OR (||)
 let highIncome = true;
-let goodCreditScore = true;
+let goodCreditScore = false;
 let eligibleForLoan = highIncome && goodCreditScore;
+console.log('Eligible', eligibleForLoan);
 
-console.log(eligibleForLoan);
+//not (!)
+let applicationRefused = !eligibleForLoan;
+console.log('Application Refused', applicationRefused);
+
+//logocal operator with non booleans
+//falsy- undifined, 0, null, false, '', nan
+
+let userCOlor = '';
+let defaultColor = 'blue';
+let currentColor = userCOlor || defaultColor;
+
+console.log(currentColor);
+
+//bitwise operator
+// 1 = 0000001
+// 2 = 0000010
+// 3 = 0000011
+// R = 0000000
+
+console.log(1 | 2); //bitwise OR
+console.log(1 & 2); //bitsie AND
+
+
+//read, write, execute
+// 00000100
+// 00000010
+// 00000001
+
+const readPermission = 4;
+const writePermission = 2;
+const executePermission = 1;
+
+let myPermission = 0;
+myPermission = myPermission | readPermission | writePermission;
+
+let message = (myPermission & readPermission) ? 'yes' : 'no';
+console.log(message);
+
+//precedence operator
+
+let xx = 2 + 3 * 4;
+console.log(xx);
+
+let cc = (2 + 3) * 4;
+console.log(cc)
